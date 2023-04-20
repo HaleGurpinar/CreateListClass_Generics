@@ -16,6 +16,7 @@ import java.lang.reflect.Array;
     }
 
     public MyList(int capacity) {
+        this.size=0;
         this.capacity=capacity;
         this.list= (T[]) new Object[capacity];
     }
@@ -51,13 +52,7 @@ import java.lang.reflect.Array;
     }
 
      public boolean isEmpty(){
-         for (int i = 0; i < list.length ; i++) {
-             if(list[i]!=null){
-                 return false;
-             }
-
-         }
-             return true;
+         return size==0;
          }
 
 
