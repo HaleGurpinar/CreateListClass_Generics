@@ -18,9 +18,10 @@ public class Main {
         myList.add(70);
         myList.add(80);
         myList.add(90);
-       /* myList.add(100);
-        myList.add(110);*/
-        System.out.println(myList);
+        myList.add(100);
+        myList.add(110);
+        myList.add(120);
+        myList.add(130);
         System.out.println("Number of Elements in Array : " + myList.size());
         System.out.println("Capacity of Array : " + myList.getCapacity());
 
