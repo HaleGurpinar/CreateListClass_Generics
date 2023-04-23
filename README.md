@@ -28,3 +28,7 @@ Class features:
 
 
 * add(T data) : It should be used to add an element to the array of the class. If there is not enough space in the array, the array size should be doubled.
+
+
+
+*subList()
