@@ -94,6 +94,15 @@ import java.lang.reflect.Array;
         }
     }
 
+    public void set(int index, T data){
+        if (index < 0 || index > size){
+            return ;
+        }else{
+            list[index]=data;
+
+        }
+     }
+
      public boolean isEmpty(){
          return size==0;
          }

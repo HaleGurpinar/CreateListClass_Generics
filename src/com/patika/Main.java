@@ -18,6 +18,8 @@ public class Main {
         System.out.println(myList.get(3));
         myList.remove(3);
         System.out.println(myList.get(4));
+        myList.set(3,55);
+        System.out.println(myList.get(3));
 
         System.out.println("List Case : " + (myList.isEmpty() ? "Empty" : "Full"));
         System.out.println("Number of Elements in Array : " + myList.size());
