@@ -15,6 +15,10 @@ public class Main {
         myList.add(60);
         myList.add(70);
         myList.add(80);
+        System.out.println(myList.get(3));
+        myList.remove(3);
+        System.out.println(myList.get(4));
+
         System.out.println("List Case : " + (myList.isEmpty() ? "Empty" : "Full"));
         System.out.println("Number of Elements in Array : " + myList.size());
         System.out.println("Capacity of Array : " + myList.getCapacity());

@@ -83,6 +83,17 @@ import java.lang.reflect.Array;
         }
     }
 
+    public void remove(int index){
+        if (index<=getSize()){
+            for (int i=index;i<this.size;i++){
+                this.list[i+1]=this.list[i];
+                list[index]=null;
+            }
+        }else{
+            return;
+        }
+    }
+
      public boolean isEmpty(){
          return size==0;
          }
