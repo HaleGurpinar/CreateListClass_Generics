@@ -31,4 +31,13 @@ Class features:
 
 
 
-*subList()
+* get(int index): returns the value at the given index. Returns null if invalid index is entered.
+
+
+* remove(int index): should delete the data in the given index and shift the data after the deleted index to the left. Returns null if invalid index is entered.
+
+
+* set(int index, T data) : should replace the data in the given index with a new one. Returns null if invalid index is entered.
+
+
+* String toString() : A method that lists the elements in the array of the class.
