@@ -4,15 +4,14 @@ import java.lang.reflect.Array;
 
  class MyList<T>{
 
-    private int capacity=10;
+    private int capacity;
     private int size=0;
 
-     T[] list;
+     private T[] list;
 
     public MyList() {
-       /* setCapacity(10);
-       this.list=(T[]) new Object[getCapacity()];*/
-        this(10);
+       setCapacity(10);
+       this.list=(T[]) new Object[getCapacity()];
     }
 
     public MyList(int capacity) {
@@ -40,22 +39,60 @@ import java.lang.reflect.Array;
      }
 
      public void add(T data) {
-        if (this.size>=this.capacity){
+
+         if (capacity >= size) {
+             this.list[size] = data;
+             setSize(getSize() + 1);
+         } else {
+           T[]  tempList = (T[]) new Object[(this.capacity)];
+             setCapacity(getCapacity() * 2);
+
+             int index = 0;
+             for (T val : list) {
+                 tempList[index] = val;
+                 index++;
+             }
+
+             list = (T[]) new Object[(getCapacity())];
+
+             index = 0;
+             for (T val : tempList) {
+                 list[index] = val;
+                 index++;
+             }
+
+             this.list[size()] = data;
+             setSize(getSize() + 1);
+         }
+       /* if (this.size>=this.capacity){
             int newCapacity= capacity*2;
             T[] newList=(T[]) new Object[(newCapacity)];
             System.arraycopy(list, 0, newList, 0, list.length);
             list=newList;
         }else{
             list[size++]= data;
-        }
+        }*/
 
+    }
+
+    public T get(int index){
+        if (index<=getSize()){
+            return list[index];
+        } else {
+            return null;
+        }
     }
 
      public boolean isEmpty(){
          return size==0;
          }
 
+     public int getSize() {
+         return size;
+     }
 
-
-    }
+     public void setSize(int size) {
+         this.size = size;
+     }
+ }
 
