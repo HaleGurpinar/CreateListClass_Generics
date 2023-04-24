@@ -41,3 +41,21 @@ Class features:
 
 
 * String toString() : A method that lists the elements in the array of the class.
+
+* int indexOf(T data) : Returns the index of the object given in the parameter in the list. Returns -1 if the object is not in the list.
+
+
+* int lastIndexOf(T data) : It tells the last index of the specified item in the list. Returns -1 if the object is not in the list.
+
+
+* boolean isEmpty() : Indicates whether the list is empty.
+
+
+* T[] toArray() : Converts the items in the list into an array in the same order.
+
+
+* clear() : Deletes all items in the list, making it an empty list.
+
+* MyList<T> sublist(int start,int finish) : Returns a list of the index range given in the parameter.
+
+* boolean contains(T data) : It tells whether the value given in the parameter is in the array.
