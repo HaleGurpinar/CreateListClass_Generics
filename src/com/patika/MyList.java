@@ -1,8 +1,8 @@
 package com.patika;
 
-import java.lang.reflect.Array;
+import java.util.Arrays;
 
- class MyList<T>{
+class MyList<T>{
 
     private int capacity;
     private int size=0;
@@ -21,22 +21,46 @@ import java.lang.reflect.Array;
     }
 
     public int size(){
-        int c=0;
+        int size=0;
         for (T t : list) {
             if (t != null) {
-                c++;
+                size++;
             }
         }
-        return c;
+        return size;
     }
 
-    public int getCapacity() {
-        return capacity;
+    public  int indexOf(T data){
+        int curIndex=0;
+
+        while (curIndex< size){
+            if (list[curIndex] == data)
+                return curIndex;
+            curIndex++;
+        }
+        return -1;
     }
 
-     public void setCapacity(int capacity) {
-         this.capacity = capacity;
-     }
+    public  int lastIndexOf(T data){
+        int curIndex=size-1;
+
+        while (curIndex>=0){
+            if (list[curIndex] == data)
+                return curIndex;
+            curIndex--;
+        }
+        return -1;
+    }
+
+    public T[] toArray(){
+
+        T[] items= (T[]) new Object[size];
+
+        for (int i=0;i<size;i++){
+            items[i]=list[i];
+        }
+        return items;
+    }
 
      public void add(T data) {
 
@@ -84,23 +108,30 @@ import java.lang.reflect.Array;
     }
 
     public void remove(int index){
-        if (index<=getSize()){
-            for (int i=index;i<this.size;i++){
-                this.list[i+1]=this.list[i];
+        if (index < 0 || index > this.getCapacity()){
+            for (int i=index+1;i<this.size();i++){
+                this.list[i-1]= this.list[i];
                 list[index]=null;
             }
         }else{
             return;
         }
+       // setSize(getSize() - 1);
     }
 
-    public void set(int index, T data){
+    public T set(int index, T data){
         if (index < 0 || index > size){
-            return ;
-        }else{
-            list[index]=data;
+            return null;
+        }else {
+            return list[index] = data;
+        }
 
         }
+
+
+     @Override
+     public String toString() {
+         return Arrays.toString(list);
      }
 
      public boolean isEmpty(){
@@ -114,5 +145,13 @@ import java.lang.reflect.Array;
      public void setSize(int size) {
          this.size = size;
      }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
  }
 
