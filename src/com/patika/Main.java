@@ -34,6 +34,8 @@ public class Main {
         System.out.println(myList.lastIndexOf(30));
         Object[] array= myList.toArray();
         System.out.println(array[0]);
+        System.out.println(myList.sublist(0,2));
+        System.out.println(myList.contains(90));
 
 
 

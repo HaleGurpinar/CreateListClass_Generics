@@ -62,7 +62,27 @@ class MyList<T>{
         return items;
     }
 
-     public void add(T data) {
+    public void clear(){
+        for (int i=0;i<=list.length;i++){
+            list[i]=null;
+        }
+    }
+
+    public MyList <T> sublist(int start,int finish){
+        int newSize=finish-start+1;
+        MyList <T> newList= new MyList<>(newSize);
+
+        for (int i=start;i<=finish;i++){
+            newList.add(list[i]);
+        }
+        return newList;
+    }
+
+    public boolean contains(T data){
+        return indexOf(data)!= -1;
+    }
+
+    public void add(T data) {
 
          if (capacity >= size) {
              this.list[size] = data;
