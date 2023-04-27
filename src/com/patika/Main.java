@@ -7,6 +7,7 @@ public class Main {
         MyList<Integer> myList= new MyList<>();
         System.out.println("List Case : " + (myList.isEmpty() ? "Empty" : "Full"));
         System.out.println("Number of Elements in Array : " + myList.size());
+        System.out.println("Capacity of Array : "+ myList.getCapacity());
         myList.add(10);
         myList.add(20);
         myList.add(30);
@@ -20,8 +21,11 @@ public class Main {
         myList.add(110);
         myList.add(120);
 
-        System.out.println("Number of Elements in Array : " + myList.size());
+
         System.out.println("List Case : " + (myList.isEmpty() ? "Empty" : "Full"));
+        System.out.println("Number of Elements in Array : " + myList.size());
+        //Doubled capacity because of exceeding 10 elements
+        System.out.println("Capacity of Array : "+ myList.getCapacity());
         System.out.println(myList.toString());
 
         // Return index of entered value
@@ -38,12 +42,13 @@ public class Main {
         System.out.println("First element of Object array :" + dizi[0]);
 
         // Create a sublist with list type
+        System.out.println("New sublist from array elements");
         MyList<Integer> subList = myList.subList(0, 3);
         System.out.println(subList.toString());
 
         // Number in list or not
-        System.out.println("20 value in my list: " + myList.contains(20));
-        System.out.println("105 value in my list: " + myList.contains(105));
+        System.out.println("20 value in my array: " + myList.contains(20));
+        System.out.println("105 value in my array: " + myList.contains(105));
 
         // Clear all list and assign null
         myList.clear();
