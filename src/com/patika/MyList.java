@@ -55,39 +55,49 @@ public class MyList<T> {
 
     public T remove(int index) {
         T value;
-        try {
+
             value=get(index);
             if (array[index] != null) {
                 if (size() - index >= 0) System.arraycopy(array, index + 1, array, index, size() - index);
+            }else{
+                return null;
             }
-        } catch (Exception ignored) {
-            return null;
-        }
         return value;
     }
 
     public void set(int index, T data) {
-        try {
+
             if (array[index] != null) {
                 array[index] = data;
             }
-        } catch (Exception ignored) {
-            System.out.println("Error!!!");
-        }
     }
 
-    public String toString() {
-        if (size() > 0) {
-            StringBuilder str = new StringBuilder("[");
-            for (int i = 0; i < size(); i++) {
-                if (i == (size() - 1)) {
-                    str.append(array[i]).append("]");
-                } else str.append(array[i]).append(",");
+//    public String toString() {
+//        if (size() > 0) {
+//            StringBuilder str = new StringBuilder("[");
+//            for (int i = 0; i < size(); i++) {
+//                if (i == (size() - 1)) {
+//                    str.append(array[i]).append("]");
+//                } else str.append(array[i]).append(",");
+//
+//            }
+//            return str.toString();
+//        }
+//        return "[]";
+//    }
 
+    public String toString(){
+
+        String list = "[";
+        for(T element : this.array){
+            if(element != null ){
+                list = list +" "+ element;
+            }else{
+                list = list + "]";
+                break;
             }
-            return str.toString();
         }
-        return "[]";
+        return list;
     }
 
     public int indexOf(T data) {
@@ -129,7 +139,7 @@ public class MyList<T> {
         for (int i = start; i <= finish; i++) {
             newList.add(array[i]);
         }
-        return newList;
+        return newList ;
     }
 
     public boolean contains(T data) {
