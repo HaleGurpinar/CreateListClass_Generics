@@ -33,7 +33,7 @@ public class Main {
         // Return last index of list
         System.out.println("Index : " + myList.lastIndexOf(20));
 
-        // Listeyi Object[] dizisi olarak geri verir.
+        // Returns the list as an Object[] array.
         Object[] dizi = myList.toArray();
         System.out.println("First element of Object array :" + dizi[0]);
 

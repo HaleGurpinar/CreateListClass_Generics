@@ -1,5 +1,5 @@
 package com.patika;
-import java.util.ArrayList;
+
 import java.util.Arrays;
 
 public class MyList<T> {
@@ -72,7 +72,7 @@ public class MyList<T> {
                 array[index] = data;
             }
         } catch (Exception ignored) {
-            System.out.println("Hatalı işlem");
+            System.out.println("Error!!!");
         }
     }
 
