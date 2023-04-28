@@ -59,3 +59,6 @@ Class features:
 * MyList<T> sublist(int start,int finish) : Returns a list of the index range given in the parameter.
 
 * boolean contains(T data) : It tells whether the value given in the parameter is in the array.
+
+![Employee data](https://github.com/HaleGurpinar/CreateListClass_Generics/blob/master/Generics%20SS.PNG?raw=true
+" Class-Diagram")
